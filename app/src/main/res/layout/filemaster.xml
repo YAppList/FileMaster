@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:padding="10dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/guid1"
+        android:text="分类"
+        android:gravity="center"
+        android:layout_weight="1.0"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/guid2"
+        android:text="本地"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_weight="1.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/guid3"
+        android:text="网盘"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_weight="1.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+    <ImageView
+        android:id="@+id/indicator"
+        android:scaleType="matrix"
+        android:src="@drawable/line"
+        android:layout_width="100dp"
+        android:layout_height="15dp" />
+     <android.support.v4.view.ViewPager
+          android:id="@+id/viewpager"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+</LinearLayout>

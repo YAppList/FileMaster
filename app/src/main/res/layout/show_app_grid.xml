@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#313849"
+    >
+	<RelativeLayout
+		android:id="@+id/path_tip"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp"
+		android:layout_alignParentTop="true"
+		android:background="@android:color/white"
+		>
+		<TextView
+			android:id="@+id/tv_file_path"
+			android:layout_alignParentLeft="true"
+			android:layout_marginLeft="5px"
+			android:layout_marginTop="1px"
+			android:gravity="center"
+			android:src="@drawable/list"
+			android:textColor="@android:color/black"
+			android:layout_width="200dp"
+			android:layout_height="30dp"
+			/>
+		<ImageButton
+			android:id="@+id/button_back"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="5px"
+			android:layout_marginTop="1px"
+			android:background="@drawable/up"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			/>
+
+	</RelativeLayout>
+
+    <GridView
+    	android:id="@+id/gv_apps"
+		android:layout_below="@id/path_tip"
+    	android:layout_height="fill_parent"
+    	android:layout_width="fill_parent"
+    	android:numColumns="3" 
+    	android:horizontalSpacing="10px"
+    	android:verticalSpacing="10px"
+    	android:listSelector="@drawable/choose_gridview"
+    	android:layout_marginTop="28px"
+    	android:layout_marginBottom="58px"
+    	android:layout_marginLeft="5px"
+    	android:layout_marginRight="5px"
+    	   	>
+    </GridView>
+    
+    <!-- 
+    
+    3、	RelativeLayout
+a)	宽：fill_parent
+b)	高：58px
+c)	紧靠父控件底部
+d)	背景图片：bottom_bg
+e)	有两个ImageButton
+i.	设置id分别为：ib_change_view和ib_change_category
+ii.	一个紧靠左边，一个紧靠右边
+iii.	距离父窗体：5px、1px
+iv.	图片分别为list和all
+v.	宽高为别为：76px和54px
+    
+     -->
+    
+    <RelativeLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="50dp"
+    	android:layout_alignParentBottom="true"
+    	android:background="@null"
+    >
+    <ImageButton
+    	android:id="@+id/ib_new_file"
+    	android:layout_alignParentLeft="true"
+    	android:layout_marginLeft="5px"
+    	android:layout_marginTop="1px"
+    	android:background="@drawable/add"
+    	android:layout_width="50dp"
+    	android:layout_height="50dp"
+    />
+    <ImageButton
+    	android:id="@+id/ib_paste_file"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="5px"
+    	android:layout_marginTop="1px"
+    	android:background="@drawable/paste"
+    	android:layout_width="50dp"
+    	android:layout_height="50dp"
+    />
+    </RelativeLayout>
+</RelativeLayout>
