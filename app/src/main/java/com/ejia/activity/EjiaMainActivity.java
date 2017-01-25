@@ -1,4 +1,4 @@
-package com.com.ejia.activity;
+package com.ejia.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -6,8 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
-import com.com.ejia.activity.fragment.SelfFrament;
-import com.com.ejia.activity.fragment.SignFragment;
 import com.ejia.adapter.CommonFragmentAdapter;
 import com.example.yangzhongyu.myapplication.R;
 

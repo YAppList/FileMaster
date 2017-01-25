@@ -2,6 +2,7 @@ package com.ejia.entity;
 
 public class User extends EJAMessage{
 
+
 	private String userToken;
 
 	private String userName;

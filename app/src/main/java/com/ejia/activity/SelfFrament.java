@@ -1,4 +1,4 @@
-package com.com.ejia.activity.fragment;
+package com.ejia.activity;
 
 
 import android.os.Bundle;
@@ -13,13 +13,12 @@ import com.example.yangzhongyu.myapplication.R;
 /**
  * Created by yangzhongyu on 2017/1/22.
  */
-public class SignFragment extends Fragment {
-
+public class SelfFrament extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.frament_sign,null,false);
+        View view = inflater.inflate(R.layout.frament_self,null,false);
         return  view;
     }
 }

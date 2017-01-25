@@ -12,7 +12,6 @@ public class Constants {
 
 	public static final int DEFAULT_SERVER_PORT = 8080;
 
-	public static final String ENDPOINT  =  "http://192.168.43.65:8784";
 
-	public static final String REQUEST_SUCCESS = "100";
+	public static final String REQUEST_SUCCESS = "1000";
 }
