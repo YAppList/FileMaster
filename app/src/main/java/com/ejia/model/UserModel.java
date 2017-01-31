@@ -5,6 +5,7 @@ import android.util.Log;
 import com.ejia.entity.EJAMessage;
 import com.ejia.entity.User;
 import com.ejia.network.ApiService;
+import com.ejia.presenter.MyCallBack;
 import com.ejia.presenter.NetworkListener;
 import com.ejia.presenter.UserPresenter;
 import com.rupeng.view.constants.Constants;
@@ -52,24 +53,5 @@ public class UserModel implements  IUserModel {
         call.enqueue(new MyCallBack<EJAMessage>(listener));
 
     }
-    class MyCallBack<T> implements Callback<T> {
 
-
-        NetworkListener listener;
-        public MyCallBack(NetworkListener listener){
-            this.listener = listener;
-        }
-        @Override
-        public void onResponse(Response<T> response, Retrofit retrofit) {
-            Log.i("yzy","onRespone"+response.body());
-            this.listener.onResponse(response.body());
-
-        }
-
-        @Override
-        public void onFailure(Throwable t) {
-            Log.i("yzy","onFail");
-            this.listener.onFailure();
-        }
-    }
 }

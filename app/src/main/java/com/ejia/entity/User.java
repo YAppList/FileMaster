@@ -6,7 +6,17 @@ public class User extends EJAMessage{
 	private String userToken;
 
 	private String userName;
-	
+
+	private String phone;
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public String getUserToken() {
 		return userToken;
 	}

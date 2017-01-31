@@ -23,6 +23,7 @@ public class EjiaMainActivity extends FragmentActivity {
 
     private SignFragment mSignFragment = new SignFragment();//我要签单
     private SelfFrament mSelfFragment = new SelfFrament();//个人中心
+    private SignListFragment mSignListFragment = new SignListFragment();//签单列表
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,9 @@ public class EjiaMainActivity extends FragmentActivity {
 
         titleList.add("我要装修");
         tabFragment.add(mSignFragment);
+
+        titleList.add("签单中心");
+        tabFragment.add(mSignListFragment);
 
         titleList.add("个人中心");
         tabFragment.add(mSelfFragment);

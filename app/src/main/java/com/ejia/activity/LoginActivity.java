@@ -15,6 +15,8 @@ import com.ejia.presenter.UserPresenter;
 import com.ejia.view.IUserView;
 import com.example.yangzhongyu.myapplication.R;
 import com.rupeng.view.constants.Constants;
+import com.rupeng.view.utility.EncryptUtils;
+import com.rupeng.view.utility.SharePreferenceUtil;
 
 /**
  * Created by yangzhongyu on 2017/1/22.
@@ -64,8 +66,20 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         String phone = etUserPhone.getText().toString();
         String psw = etUserPsw.getText().toString();
 
+        if(phone == null || phone.isEmpty()){
+            Toast.makeText(this,"请输入手机号码",Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(psw == null || psw.isEmpty()){
+            Toast.makeText(this,"请输入密码",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+
         mUserPresenter = new UserPresenter(this);
-        mUserPresenter.login(phone,psw);
+
+        String psw2 = EncryptUtils.Encrypt(psw,"SHA-256");
+        mUserPresenter.login(phone,psw2);
     }
 
     @Override
@@ -76,12 +90,16 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     public void login(User user) {
 
-        Log.i("yzy","user login = " + user.getErrorCode());
         if(user.getErrorCode().equals(Constants.REQUEST_SUCCESS) ){
                Intent intent = new Intent(LoginActivity.this,EjiaMainActivity.class);
                startActivity(intent);
+
+            SharePreferenceUtil.saveUserPhone(this,user.getPhone());
+
+            SharePreferenceUtil.saveUserToken(this,user.getUserToken());
+
         }else{
-           // Toast.makeText(this,)
+            Toast.makeText(this,"用户名密码错误",Toast.LENGTH_LONG).show();
         }
     }
 

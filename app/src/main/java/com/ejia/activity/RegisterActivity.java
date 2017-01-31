@@ -10,6 +10,7 @@ import com.ejia.entity.User;
 import com.ejia.presenter.UserPresenter;
 import com.ejia.view.IUserView;
 import com.example.yangzhongyu.myapplication.R;
+import com.rupeng.view.utility.EncryptUtils;
 
 /**
  * Created by yangzhongyu on 2017/1/23.
@@ -35,7 +36,8 @@ public class RegisterActivity extends BaseActivity implements IUserView {
 
             @Override
             public void onClick(View view) {
-                mUserPreenter.register(etUserPhone.getText().toString(),etUserPsw.getText().toString(),etYzm.getText().toString());
+                String psw = EncryptUtils.Encrypt(etUserPsw.getText().toString(),"SHA-256");
+                mUserPreenter.register(etUserPhone.getText().toString(),psw,etYzm.getText().toString());
 
             }
         });
