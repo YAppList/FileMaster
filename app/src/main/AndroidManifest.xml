@@ -32,15 +32,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.ejia.activity.RegisterActivity" >
-        </activity>
+        <activity android:name="com.ejia.activity.RegisterActivity"/> >
 
         <activity android:name="com.ejia.activity.EjiaMainActivity"/>
 
+        <activity android:name="com.ejia.activity.SignDetailActivity"/>
 
-        <activity android:name="com.rupeng.view.FileMasterTabActivity" >
-
-        </activity>
+        <activity android:name="com.rupeng.view.FileMasterTabActivity"/>
 
         <service android:name="com.rupeng.view.service.HTTPService"/>
     </application>

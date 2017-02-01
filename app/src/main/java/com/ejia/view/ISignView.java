@@ -1,5 +1,6 @@
 package com.ejia.view;
 
+import com.ejia.entity.EJAMessage;
 import com.ejia.entity.Sign;
 
 import java.util.List;
@@ -10,4 +11,6 @@ import java.util.List;
 public interface ISignView {
 
     void onQuerySignList(List<Sign> signs);
+
+    void onApplySign(EJAMessage message);
 }

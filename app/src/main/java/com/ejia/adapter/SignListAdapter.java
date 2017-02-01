@@ -1,11 +1,13 @@
 package com.ejia.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.ejia.activity.SignDetailActivity;
 import com.ejia.entity.Sign;
 
 import java.util.List;
@@ -21,8 +23,7 @@ public class SignListAdapter extends BaseAdapter {
 
     public SignListAdapter(Context context,List<Sign> signList) {
            mSignList = signList;
-
-        mContext = context;
+           mContext = context;
     }
 
     @Override
@@ -41,9 +42,20 @@ public class SignListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final  int i, View view, ViewGroup viewGroup) {
         TextView tv = new TextView(mContext);
-        tv.setText(mSignList.get(i).getSignId()+"");
+        tv.setText("签单ID:"+mSignList.get(i).getSignId());
+
+        tv.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, SignDetailActivity.class);
+                intent.putExtra("sign",mSignList.get(i));
+
+                mContext.startActivity(intent);
+            }
+        });
         return tv;
     }
 }

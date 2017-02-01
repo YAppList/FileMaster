@@ -1,6 +1,8 @@
 package com.ejia.entity;
 
-public class Sign extends EJAMessage{
+import java.io.Serializable;
+
+public class Sign extends EJAMessage implements Serializable{
 
 	public Sign(){
 		

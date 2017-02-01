@@ -23,7 +23,7 @@ public class SharePreferenceUtil {
     }
 
     public static String getUserToken(Context context,String value){
-        return; context.getSharedPreferences("setting",0).getString("userToken","");
+        return context.getSharedPreferences("setting",0).getString("userToken","");
     }
 
     public static String  getUserPhone(Context context){

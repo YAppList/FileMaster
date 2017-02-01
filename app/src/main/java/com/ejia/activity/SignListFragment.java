@@ -9,11 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.ejia.adapter.SignListAdapter;
+import com.ejia.entity.EJAMessage;
 import com.ejia.entity.Sign;
 import com.ejia.presenter.ISignPresenter;
 import com.ejia.presenter.SignPresenter;
 import com.ejia.view.ISignView;
 import com.example.yangzhongyu.myapplication.R;
+import com.rupeng.view.utility.SharePreferenceUtil;
 
 import java.util.List;
 
@@ -37,12 +39,17 @@ public class SignListFragment extends Fragment implements ISignView{
         mListView = (ListView) view.findViewById(R.id.list_view_sign);
 
         mSignPresenter = new SignPresenter(this);
-        mSignPresenter.querySignListByPhone("159");
+        mSignPresenter.querySignListByPhone(SharePreferenceUtil.getUserPhone(getContext()));
         return  view;
     }
 
     @Override
     public void onQuerySignList(List<Sign> signList) {
           mListView.setAdapter(new SignListAdapter(getContext(),signList));
+    }
+
+    @Override
+    public void onApplySign(EJAMessage message) {
+
     }
 }

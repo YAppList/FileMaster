@@ -35,4 +35,18 @@ public class SignPresenter implements ISignPresenter {
             }
         });
     }
+
+    @Override
+    public void applySign(Sign sign) {
+        mSignModel.applySign(sign,new NetworkListener<EJAMessage>() {
+            @Override
+            public void onResponse(EJAMessage message) {
+                mSignView.onApplySign(message);
+            }
+
+            @Override
+            public void onFailure() {
+            }
+        });
+    }
 }

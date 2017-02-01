@@ -1,5 +1,6 @@
 package com.ejia.activity;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -48,7 +49,7 @@ public class EjiaMainActivity extends FragmentActivity {
         titleList.add("我要装修");
         tabFragment.add(mSignFragment);
 
-        titleList.add("签单中心");
+        titleList.add("我的签单");
         tabFragment.add(mSignListFragment);
 
         titleList.add("个人中心");
@@ -58,5 +59,11 @@ public class EjiaMainActivity extends FragmentActivity {
         mViewPager.setAdapter(mCommonFragmentAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 }

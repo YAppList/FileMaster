@@ -93,11 +93,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         if(user.getErrorCode().equals(Constants.REQUEST_SUCCESS) ){
                Intent intent = new Intent(LoginActivity.this,EjiaMainActivity.class);
                startActivity(intent);
-
-            SharePreferenceUtil.saveUserPhone(this,user.getPhone());
-
-            SharePreferenceUtil.saveUserToken(this,user.getUserToken());
-
+               SharePreferenceUtil.saveUserPhone(this,user.getPhone());
+               SharePreferenceUtil.saveUserToken(this,user.getUserToken());
+               finish();
         }else{
             Toast.makeText(this,"用户名密码错误",Toast.LENGTH_LONG).show();
         }

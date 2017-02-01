@@ -16,6 +16,7 @@ public interface ApiService {
     public static final String REGISTER = "register";
     public static final String SIGNLIST = "signlist";
     public static final String RECOMMEND_SIGN_LIST = "recommend_sign_list";
+    public static final String APPLY_SIGN = "applySign";
 
 
     public static final String ENDPOINT  =  "http://192.168.1.104:8784";
@@ -31,6 +32,14 @@ public interface ApiService {
 
     @GET("/eja/servlet/SignServlet")
     Call<List<Sign>>  getSignListByRecommendPhone(@Query("method") String method, @Query("recommendPhone") String phone);
+
+
+    @GET("/eja/servlet/SignServlet")
+    Call<EJAMessage>  applySign(@Query("method") String method, @Query("recommendPhone") String recommendPhone,@Query("recommendSignId") String recommendSignId,
+                                @Query("userPhone") String userPhone,@Query("city") String city,@Query("zoneName") String  zoneName,@Query("floor") String floor,
+                                @Query("department") String department,@Query("roomNum") String roomNum );
+
+
 
 
 

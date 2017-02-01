@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.ejia.entity.EJAMessage;
 import com.ejia.entity.User;
@@ -56,7 +57,7 @@ public class RegisterActivity extends BaseActivity implements IUserView {
 
     @Override
     public void register(EJAMessage messge) {
-
+        Toast.makeText(this,messge.getErrorMsg(),Toast.LENGTH_LONG).show();
     }
 
 }

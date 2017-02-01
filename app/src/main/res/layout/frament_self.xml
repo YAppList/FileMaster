@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
    <TextView
-       android:text="查看我的签单列表 > "
+       android:text="我的签单列表 > "
        android:layout_width="match_parent"
        android:layout_height="wrap_content" />
+    <View android:layout_height="1dp" android:layout_width="match_parent" android:background="@android:color/black"/>
     <TextView
-        android:text="查看我推荐的签单列表 > "
+        android:text="我推荐的签单列表 > "
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
