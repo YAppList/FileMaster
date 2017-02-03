@@ -14,7 +14,11 @@ public class Sign extends EJAMessage implements Serializable{
 	public int signId; 
 	
 	public String userPhone;
-	
+	// 申请签单  <br/>
+	//		2 已付预付款 <br/>
+	//		3 已付尾款(不满足返现条件) <br/>
+	//		4 已付尾款(满足返现条件) <br/>
+	//		5 已返现给推荐人
 	public String signStatus;
 	
 	public String recommenderPhone;

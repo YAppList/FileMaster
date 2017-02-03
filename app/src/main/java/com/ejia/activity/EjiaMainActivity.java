@@ -23,7 +23,7 @@ public class EjiaMainActivity extends FragmentActivity {
     private ViewPager mViewPager;
 
     private SignFragment mSignFragment = new SignFragment();//我要签单
-    private SelfFrament mSelfFragment = new SelfFrament();//个人中心
+    private RecommendSignListFrament mSelfFragment = new RecommendSignListFrament();//我推荐的签单列表
     private SignListFragment mSignListFragment = new SignListFragment();//签单列表
 
     @Override
@@ -52,7 +52,7 @@ public class EjiaMainActivity extends FragmentActivity {
         titleList.add("我的签单");
         tabFragment.add(mSignListFragment);
 
-        titleList.add("个人中心");
+        titleList.add("我的推荐");
         tabFragment.add(mSelfFragment);
 
         mCommonFragmentAdapter = new CommonFragmentAdapter(getSupportFragmentManager(),tabFragment,titleList,mViewPager.getId());

@@ -31,6 +31,19 @@ public class SignModel implements  ISignModel {
     }
 
     @Override
+    public void queryRecommendSignListByPhone(String phone, NetworkListener listener) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ApiService.ENDPOINT)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiService apiService = retrofit.create(ApiService.class);
+
+        Call<List<Sign>> call =  apiService.getRecommendSignListByPhone(ApiService.RECOMMEND_SIGN_LIST,phone);
+
+        call.enqueue(new MyCallBack<List<Sign>>(listener));
+    }
+
+    @Override
     public void applySign(Sign sign,NetworkListener listener) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ApiService.ENDPOINT)

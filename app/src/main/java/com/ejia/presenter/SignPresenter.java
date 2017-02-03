@@ -37,6 +37,21 @@ public class SignPresenter implements ISignPresenter {
     }
 
     @Override
+    public void queryRecommendSignListByPhone(String phone) {
+        mSignModel.queryRecommendSignListByPhone(phone,new NetworkListener<List<Sign>>() {
+            @Override
+            public void onResponse(List<Sign> signs) {
+                mSignView.onQueryRecommendSignList(signs);
+            }
+
+            @Override
+            public void onFailure() {
+
+            }
+        });
+    }
+
+    @Override
     public void applySign(Sign sign) {
         mSignModel.applySign(sign,new NetworkListener<EJAMessage>() {
             @Override

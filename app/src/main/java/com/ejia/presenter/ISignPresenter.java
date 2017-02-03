@@ -9,5 +9,7 @@ public interface ISignPresenter {
 
     public void querySignListByPhone(String phone);
 
+    public void queryRecommendSignListByPhone(String phone);
+
     public void applySign(Sign sign);
 }

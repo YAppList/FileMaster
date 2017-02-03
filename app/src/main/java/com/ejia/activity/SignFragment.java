@@ -17,6 +17,7 @@ import com.ejia.entity.Sign;
 import com.ejia.presenter.SignPresenter;
 import com.ejia.view.ISignView;
 import com.example.yangzhongyu.myapplication.R;
+import com.rupeng.view.utility.SharePreferenceUtil;
 
 import java.util.List;
 
@@ -59,6 +60,7 @@ public class SignFragment extends Fragment implements ISignView{
 
     private void initView() {
         etUserPhone = (EditText) mView.findViewById(R.id.etUserPhone);
+        etUserPhone.setText(SharePreferenceUtil.getUserPhone(getContext()));
         etRecommandUserPhone = (EditText) mView.findViewById(R.id.etRecommanderPhone);
         etRecommandUserSignId = (EditText) mView.findViewById(R.id.et_recommander_signId);
 
@@ -116,11 +118,20 @@ public class SignFragment extends Fragment implements ISignView{
             Toast.makeText(getContext(),"请填写完整",Toast.LENGTH_LONG).show();
             return false;
         }
+        if(userPhone.length() < 11 ){
+            Toast.makeText(getContext(),"电话号码不合法",Toast.LENGTH_LONG).show();
+            return false;
+        }
         return  true;
     }
 
     @Override
     public void onQuerySignList(List<Sign> signs) {
+
+    }
+
+    @Override
+    public void onQueryRecommendSignList(List<Sign> signs) {
 
     }
 

@@ -30,8 +30,9 @@ public interface ApiService {
     @GET("/eja/servlet/SignServlet")
     Call<List<Sign>>  getSignListByPhone(@Query("method") String method, @Query("phone") String phone);
 
+
     @GET("/eja/servlet/SignServlet")
-    Call<List<Sign>>  getSignListByRecommendPhone(@Query("method") String method, @Query("recommendPhone") String phone);
+    Call<List<Sign>>  getRecommendSignListByPhone(@Query("method") String method, @Query("recommendPhone") String phone);
 
 
     @GET("/eja/servlet/SignServlet")

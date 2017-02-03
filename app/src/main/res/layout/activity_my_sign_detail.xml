@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="您的电话"
+                android:text="签单人电话"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
@@ -36,7 +36,6 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/etRecommanderPhone"
-                android:inputType="phone"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
@@ -47,7 +46,6 @@
             android:layout_height="wrap_content">
             <TextView
                 android:text="推荐人签单ID"
-                android:inputType="number"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
@@ -98,7 +96,6 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_floorNum"
-                android:inputType="number"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
@@ -114,7 +111,6 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_department"
-                android:inputType="number"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
@@ -130,17 +126,24 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/et_RoomNum"
-                android:inputType="number"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-        <Button
-            android:id="@+id/btn_apply"
-            android:text="申请装修"
-            android:background="#ff336699"
-            android:textColor="@android:color/white"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="签单状态"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_sign_status"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

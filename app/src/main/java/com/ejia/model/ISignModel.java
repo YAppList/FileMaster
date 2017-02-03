@@ -11,4 +11,6 @@ public interface ISignModel {
     public void querySignListByPhone(String phone, NetworkListener listener);
 
     public void applySign(Sign sign,NetworkListener listener);
+
+    public void queryRecommendSignListByPhone(String phone, NetworkListener listener);
 }

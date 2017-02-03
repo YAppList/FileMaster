@@ -44,6 +44,7 @@ public class SignListAdapter extends BaseAdapter {
     @Override
     public View getView(final  int i, View view, ViewGroup viewGroup) {
         TextView tv = new TextView(mContext);
+        tv.setTextSize(20);
         tv.setText("签单ID:"+mSignList.get(i).getSignId());
 
         tv.setOnClickListener(new View.OnClickListener(){

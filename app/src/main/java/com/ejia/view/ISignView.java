@@ -12,5 +12,9 @@ public interface ISignView {
 
     void onQuerySignList(List<Sign> signs);
 
+    void onQueryRecommendSignList(List<Sign> signs);
+
     void onApplySign(EJAMessage message);
+
+
 }
